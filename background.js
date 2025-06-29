@@ -14,26 +14,57 @@ chrome.runtime.onInstalled.addListener((details) => {
 });
 
 // Context Menu Actions
-chrome.contextMenus.onClicked.addListener((info, tab) => {
+chrome.contextMenus.onClicked.addListener((info) => {
   if (info.menuItemId === "open-welcome") {
     chrome.tabs.create({ url: "./welcome/welcome.html" });
   }
 });
 
-// Activate and Inject
-chrome.action.onClicked.addListener(async () => {
+// Command/Shortcut Listener
+chrome.commands.onCommand.addListener(async (command) => {
+  // get active tab
   let tabs = await chrome.tabs.query({ active: true, currentWindow: true });
   let tab = tabs[0];
 
+  // Check if shortcut is for find-last-watched video
+  if (command === "find-last-watched") {
+    executeFindLastWatched(tab);
+  }
+
+  // Check if shortcut is for find-next-unwatched video
+  if (command === "find-next-unwatched") {
+    executeFindNextUnwatched(tab);
+  }
+});
+
+// Inject the find last watched feature
+async function executeFindLastWatched(tab) {
+  // check a tab was found and check it is being used on the subscriptions page
   if (
     tab &&
     tab.id &&
     tab.url &&
-    tab.url.startsWith("https://www.youtube.com/")
+    tab.url.startsWith("https://www.youtube.com/feed/subscriptions")
+  ) {
+    // inject the find last watched script
+    await chrome.scripting.executeScript({
+      target: { tabId: tab.id },
+      files: ["./injections/findLastWatched.js"],
+    });
+  }
+}
+
+// Inject the find next unwatched feature
+async function executeFindNextUnwatched(tab) {
+  if (
+    tab &&
+    tab.id &&
+    tab.url &&
+    tab.url.startsWith("https://www.youtube.com/feed/subscriptions")
   ) {
     await chrome.scripting.executeScript({
       target: { tabId: tab.id },
-      files: ["inject.js"],
+      files: ["./injections/findNextUnwatched.js"],
     });
   }
-});
+}
