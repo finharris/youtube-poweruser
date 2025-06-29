@@ -1,4 +1,4 @@
-chrome.tabs.create({ url: "./welcome/welcome.html" }); // TEMP: auto-open on extension reload
+// chrome.tabs.create({ url: "./welcome/welcome.html" }); // TEMP: auto-open on extension reload
 
 // On Install Actions
 chrome.runtime.onInstalled.addListener((details) => {
