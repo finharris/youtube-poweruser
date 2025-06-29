@@ -1,0 +1,27 @@
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+li,
+h3 {
+  font-size: 1rem;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  height: 3rem;
+  padding: 0.5rem;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  font-size: 1rem;
+}

@@ -1,0 +1,13 @@
+{
+  "name": "YouTube Find Last Watched",
+  "description": "Scrolls through your YouTube subscriptions and finds the last watched video.",
+  "version": "0.0",
+  "manifest_version": 3,
+  "action": {
+    "default_icon": "./images/mainIcon.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["activeTab", "scripting", "contextMenus", "tabs"]
+}
