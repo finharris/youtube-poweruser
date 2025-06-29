@@ -1,7 +1,7 @@
 {
   "name": "Youtube Scroll To Last Watched",
   "description": "Scrolls through your YouTube subscriptions and finds the last watched video.",
-  "version": "1.0",
+  "version": "0.0.0.1",
   "manifest_version": 3,
   "action": {
     "default_icon": "./images/mainIcon.png"
