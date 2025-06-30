@@ -6,33 +6,82 @@
   </head>
   <body>
     <header>
-      <input type="button" value="Help" id="help-button" />
-      <img src="../images/icons/icon-48.png" alt="extension logo" />
+      <h1 class="header-title">YouTube QOL</h1>
     </header>
-    <h1>Youtube Scroll To Last Watched</h1>
 
-    <hr width="90%" />
+    <section class="tabs">
+      <div class="tab-buttons">
+        <input
+          type="button"
+          value="Settings"
+          class="tab-button tab-button-active"
+        />
+        <input type="button" value="Features" class="tab-button" />
+        <input type="button" value="Other" class="tab-button" />
+      </div>
 
-    <section>
-      <h2 class="features-heading">Features</h2>
-
-      <h3>Scroll to last watched video</h3>
-      <p>Scroll to your last watched video on your subscriptions page</p>
-      <p>Default Shortcut: Ctrl+Shift+F</p>
-
-      <h3>Scroll to second last watched video</h3>
-      <p>Scroll to your SECOND last watched video on your subscriptions page</p>
-      <p>Default Shortcut: Ctrl+Shift+U</p>
-      <p>
-        <i
-          >Note: This is slightly buggy still and we reccomend you run this
-          twice</i
-        >
-      </p>
+      <div class="tab settings-tab">
+        <h4>Max searching scroll count</h4>
+        <input
+          type="number"
+          name="max-search-scrolls"
+          id="max-search-scrolls-text"
+          min="1"
+          max="20"
+        />
+      </div>
+      <div class="tab features-tab">
+        <ul>
+          <li>
+            <h4>Find last watched video</h4>
+            <p>
+              Scroll through YouTube subscriptions page until your last watched
+              video
+            </p>
+          </li>
+          <li>
+            <h4>Find 2nd last watched video</h4>
+            <p>Go back a little further</p>
+          </li>
+          <li>
+            <h4>Sit do mollit consequat</h4>
+            <p>
+              Officia ex sit elit proident occaecat sit nulla ex id
+              exercitation.
+            </p>
+          </li>
+          <li>
+            <h4>Sit do mollit consequat</h4>
+            <p>
+              Officia ex sit elit proident occaecat sit nulla ex id
+              exercitation.
+            </p>
+          </li>
+          <li>
+            <h4>Sit do mollit consequat</h4>
+            <p>
+              Officia ex sit elit proident occaecat sit nulla ex id
+              exercitation.
+            </p>
+          </li>
+        </ul>
+      </div>
+      <div class="tab other-tab">other</div>
     </section>
 
     <footer>
       <h4>An extension by MlovianXtensions</h4>
+      <div class="footer-buttons">
+        <button id="help-button">
+          <img
+            src="../images/assets/circle-question-solid.svg"
+            alt="question mark"
+            srcset=""
+            id="circle-question-solid"
+          />
+          Help
+        </button>
+      </div>
     </footer>
 
     <script src="./popup.js" type="module"></script>
