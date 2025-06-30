@@ -1,8 +1,10 @@
+import { settings } from "./settings";
+
 window.scrollToResumeVideo = async () => {
   window.scrollTo({ top: 0 });
 
   const scrollStep = 1000;
-  const maxScrolls = 10;
+  const maxScrolls = settings.maxScrolls.getValue; // TODO - change to local storage
   let scrolls = 0;
 
   while (scrolls < maxScrolls) {
