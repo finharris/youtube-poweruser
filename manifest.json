@@ -4,9 +4,9 @@
   "version": "0.0.0.2",
   "manifest_version": 3,
   "icons": {
-    "48": "./images/icons/icon-48.png",
-    "128": "./images/icons/icon-128.png",
-    "750": "./images/icons/icon-750.png"
+    "48": "images/icons/icon-48.png",
+    "128": "images/icons/icon-128.png",
+    "750": "images/icons/icon-750.png"
   },
   "action": {
     "default_icon": "./images/icons/icon-750.png",
