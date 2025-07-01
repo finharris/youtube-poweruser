@@ -34,6 +34,7 @@ body {
   background-color: var(--dark-background);
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   padding: 1rem;
   position: relative;
 }
@@ -80,9 +81,8 @@ h1 {
   text-align: center;
 }
 
-.features-heading {
-  text-align: center;
-  text-decoration: underline;
+.tabs {
+  height: 100%;
 }
 
 .tab-buttons {
@@ -108,22 +108,45 @@ h1 {
 
 .tab {
   display: none;
+  max-height: 295px;
+  overflow-y: auto;
 }
 
 .settings-tab {
   display: block;
 }
 
-.features-tab {
-  max-height: 60%;
-  overflow-y: scroll;
+.settings-tab h4 {
+  margin-bottom: 0;
 }
-/* TODO - prettify scroll bar */
+
+.settings-tab p {
+  margin-top: 0;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--light-text);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--dark-text);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #51868e;
+}
 
 .features-tab ul {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 10px;
+  padding-left: 20px;
+  padding-right: 6px;
+  list-style-type: square;
 }
 
 .features-tab h4,
@@ -132,14 +155,23 @@ h1 {
   margin: 0;
 }
 
-ul {
-  padding-left: 15px;
+.features-tab p {
+  margin-top: 5px;
+}
+
+.keybind {
+  font-style: italic;
+  color: var(--light-text);
 }
 
 footer {
   font-size: 15px;
-  position: absolute;
-  bottom: 0.5rem;
+  height: 95px;
+}
+
+footer h4 {
+  color: var(--dark-text);
+  margin-top: 0;
 }
 
 .footer-buttons {

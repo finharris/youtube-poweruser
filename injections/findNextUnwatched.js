@@ -1,10 +1,16 @@
-import { settings } from "./settings";
+function getMaxScrolls() {
+  return new Promise((resolve) => {
+    chrome.storage.sync.get("maxSearchScroll", (data) => {
+      resolve(data.maxSearchScroll);
+    });
+  });
+}
 
 window.scrollToSecondWatchedVideo = async () => {
   window.scrollTo({ top: 0 });
 
   const scrollStep = 1000;
-  const maxScrolls = settings.maxScrolls.getValue; // TODO - change to local storage
+  const maxScrolls = await getMaxScrolls();
   let scrolls = 0;
 
   while (scrolls < maxScrolls) {

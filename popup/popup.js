@@ -1,10 +1,8 @@
-import { settings } from "../injections/settings.js";
-
 // open welcome page on help button click
 const helpButton = document.getElementById("help-button");
 
 helpButton.addEventListener("click", () => {
-  chrome.tabs.create({ url: "./welcome/welome.html" });
+  chrome.tabs.create({ url: "welcome/welcome.html" });
 });
 
 // logic for showing and hiding tabs
@@ -36,13 +34,22 @@ tabButtons.forEach((button) => {
 
 // logic for settings tab
 
-// update settings
-
 // max searching scroll count initialise and update
 const maxSearchScrollInput = document.getElementById("max-search-scrolls-text");
 
-maxSearchScrollInput.value = settings.maxScrolls.getValue; // TODO - change to local storage
+// set value on page
+chrome.storage.sync.get("maxSearchScroll", (data) => {
+  if (!data.maxSearchScroll) {
+    chrome.storage.sync.set({
+      maxSearchScroll: parseInt(maxSearchScrollInput.value),
+    });
+  }
+  maxSearchScrollInput.value = data.maxSearchScroll;
+});
 
+// update value in storage when changed
 maxSearchScrollInput.addEventListener("change", (element) => {
-  settings.maxScrolls.setValue = parseInt(element.target.value);
+  const value = element.target.value;
+
+  chrome.storage.sync.set({ maxSearchScroll: parseInt(value) });
 });

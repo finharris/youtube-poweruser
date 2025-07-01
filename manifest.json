@@ -1,7 +1,7 @@
 {
-  "name": "Youtube Scroll To Last Watched",
-  "description": "Scrolls through your YouTube subscriptions and finds the last watched video.",
-  "version": "0.0.0.1",
+  "name": "YouTube Poweruser",
+  "description": "Adds quality of life features to youtube to make your viewing easier.",
+  "version": "0.0.0.2",
   "manifest_version": 3,
   "icons": {
     "48": "./images/icons/icon-48.png",
@@ -15,7 +15,7 @@
   "background": {
     "service_worker": "background.js"
   },
-  "permissions": ["activeTab", "scripting", "contextMenus", "tabs"],
+  "permissions": ["activeTab", "scripting", "contextMenus", "tabs", "storage"],
   "commands": {
     "find-last-watched": {
       "suggested_key": {
