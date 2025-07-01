@@ -1,7 +1,11 @@
-// On Install Actions
+// chrome.tabs.create({ url: "./update/update.html" });
+
+// On Install and Update Actions
 chrome.runtime.onInstalled.addListener((details) => {
   if (details.reason === "install") {
     chrome.tabs.create({ url: "./welcome/welcome.html" });
+  } else if (details.reason === "update") {
+    chrome.tabs.create({ url: "./update/update.html" });
   }
 
   chrome.contextMenus.create({
