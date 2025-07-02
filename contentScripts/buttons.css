@@ -1,0 +1,37 @@
+@import url("../defaultStyles.css");
+
+body {
+  background-color: rgb(15, 15, 15);
+}
+
+.button {
+  color: rgb(241, 241, 241);
+  font-size: 14px;
+  font-weight: 500;
+  border: 0 solid;
+  border-radius: 18px;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0px 16px 0px 16px;
+  margin-right: 8px;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  gap: 5px;
+}
+
+.button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.button p {
+  padding: 0;
+  margin: 0;
+  line-height: 36px;
+  color: var(--accent);
+}
+
+.button-icon {
+  width: 16px;
+  filter: invert(65%) sepia(69%) saturate(1921%) hue-rotate(320deg)
+    brightness(94%) contrast(111%);
+}

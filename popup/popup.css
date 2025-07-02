@@ -1,20 +1,4 @@
-:root {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  /* custom properties */
-  --dark-background: #22272e;
-  --light-text: #c5fffd;
-  --dark-text: #5a949d;
-  --accent: #fc7753;
-}
-
-* {
-  box-sizing: inherit;
-  /* padding: 0;
-  margin: 0; */
-}
+@import url("../defaultStyles.css");
 
 html {
   /* max 800x600 px */
