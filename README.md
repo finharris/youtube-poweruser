@@ -1,7 +1,7 @@
 Youtube Scroll To Last Watched Extension
 ---------------------------------------------------------
 
-![extension icon](../images/icons/icon-128.png)
+![extension icon](./images/icons/icon-128.png)
 
 Usage instructions:
 -------------------
